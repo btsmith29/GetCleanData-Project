@@ -3,7 +3,7 @@
 ## Introduction
 
 The provided tidy dataset is a derivative of the 
-*Human Activity Recognition Using Smartphones* Dataset 
+*Human Activity Recognition Using Smartphones Dataset* 
 produced by Anguita et al [1] and forms part of the Course Project for the
 author's enrolment in the *Getting and Cleaning Data* Coursera course (John Hopkins
 Bloomberg School of Public Health) [2].
@@ -41,93 +41,99 @@ taking one particular example:
 should not therefore be included.  This resulted in **33** mean measurements 
 and **33** standard deviation measurements being selected for the tidy dataset.
 
+The resulting dimensions for the tidy data set are 180 rows by 68 columns.
+
 ## Variables
 
 The following variables comprise the tidy dataset:
 
 * Subject 
-    * Identifier for subject/participant in the study
+    * Identifier for subject/participant in the study;
     * 1...30
 * Activity 
-    * Activity performed by the test subject whilst measurements were taken
+    * Activity performed by the test subject whilst measurements were taken;
     * WALKING|WALKING_UPSTAIRS|WALKING_DOWNSTAIRS|SITTING|STANDING|LAYING
 * Measurements
-    * the prefix f denotes frequency domain signals;
-    * the prefix t denotes time domain signals;
-    * measurements containing 'Acc' pertain to an accelerometer;
-    * measurements containing 'Gyro' pertain to a Gyroscope;
+    * measurements containing 'Acc' refer to acceleration since they relate to 
+      the accelerometer output;
+    * measurements containing 'Gyro' refer to angular velocity since they relate
+      to the gyroscope output;
     * mag refers to magnitude;
     * all base measurements (before averaging) were normalised by -1 to 1 by 
       the original authors;
+    * a full description of the variables is available in the original dataset
+      by using a combination of the features_info.txt and the README.txt files
+      and is not repeated here;
 
-Measurement | Description
-------------|----------
-tBodyAcc.mean.X    |	Average of the tBodyAcc mean (x-plane)
-tBodyAcc.mean.Y	|	Average of the tBodyAcc mean (y-plane)
-tBodyAcc.mean.Z	|	Average of the tBodyAcc mean (z-plane)
-tGravityAcc.mean.X	|	Average of the tGravityAcc mean (x-plane)
-tGravityAcc.mean.Y	|	Average of the tGravityAcc mean (y-plane)
-tGravityAcc.mean.Z	|	Average of the tGravityAcc mean (z-plane)
-tBodyAccJerk.mean.X	|	Average of the tBodyAccJerk mean (x-plane)
-tBodyAccJerk.mean.Y	|	Average of the tBodyAccJerk mean (y-plane)
-tBodyAccJerk.mean.Z	|	Average of the tBodyAccJerk mean (z-plane)
-tBodyGyro.mean.X	|	Average of the tBodyGyro mean (x-plane)
-tBodyGyro.mean.Y	|	Average of the tBodyGyro mean (y-plane)
-tBodyGyro.mean.Z	|	Average of the tBodyGyro mean (z-plane)
-tBodyGyroJerk.mean.X	|	Average of the tBodyGyroJerk mean (x-plane)
-tBodyGyroJerk.mean.Y	|	Average of the tBodyGyroJerk mean (y-plane)
-tBodyGyroJerk.mean.Z	|	Average of the tBodyGyroJerk mean (z-plane)
-tBodyAccMag.mean	|	Average of the tBodyAccMag mean 
-tGravityAccMag.mean	|	Average of the tGravityAccMag mean 
-tBodyAccJerkMag.mean	|	Average of the tBodyAccJerkMag mean 
-tBodyGyroMag.mean	|	Average of the tBodyGyroMag mean 
-tBodyGyroJerkMag.mean	|	Average of the tBodyGyroJerkMag mean 
-fBodyAcc.mean.X	|	Average of the fBodyAcc mean (x-plane)
-fBodyAcc.mean.Y	|	Average of the fBodyAcc mean (y-plane)
-fBodyAcc.mean.Z	|	Average of the fBodyAcc mean (z-plane)
-fBodyAccJerk.mean.X	|	Average of the fBodyAccJerk mean (x-plane)
-fBodyAccJerk.mean.Y	|	Average of the fBodyAccJerk mean (y-plane)
-fBodyAccJerk.mean.Z	|	Average of the fBodyAccJerk mean (z-plane)
-fBodyGyro.mean.X	|	Average of the fBodyGyro mean (x-plane)
-fBodyGyro.mean.Y	|	Average of the fBodyGyro mean (y-plane)
-fBodyGyro.mean.Z	|	Average of the fBodyGyro mean (z-plane)
-fBodyAccMag.mean	|	Average of the fBodyAccMag mean 
-fBodyBodyAccJerkMag.mean	|	Average of the fBodyBodyAccJerkMag mean 
-fBodyBodyGyroMag.mean	|	Average of the fBodyBodyGyroMag mean 
-fBodyBodyGyroJerkMag.mean	|	Average of the fBodyBodyGyroJerkMag mean 
-tBodyAcc.std.X	|	Average of the tBodyAcc standard deviation (x-plane)
-tBodyAcc.std.Y	|	Average of the tBodyAcc standard deviation (y-plane)
-tBodyAcc.std.Z	|	Average of the tBodyAcc standard deviation (z-plane)
-tGravityAcc.std.X	|	Average of the tGravityAcc standard deviation (x-plane)
-tGravityAcc.std.Y	|	Average of the tGravityAcc standard deviation (y-plane)
-tGravityAcc.std.Z	|	Average of the tGravityAcc standard deviation (z-plane)
-tBodyAccJerk.std.X	|	Average of the tBodyAccJerk standard deviation (x-plane)
-tBodyAccJerk.std.Y	|	Average of the tBodyAccJerk standard deviation (y-plane)
-tBodyAccJerk.std.Z	|	Average of the tBodyAccJerk standard deviation (z-plane)
-tBodyGyro.std.X	|	Average of the tBodyGyro standard deviation (x-plane)
-tBodyGyro.std.Y	|	Average of the tBodyGyro standard deviation (y-plane)
-tBodyGyro.std.Z	|	Average of the tBodyGyro standard deviation (z-plane)
-tBodyGyroJerk.std.X	|	Average of the tBodyGyroJerk standard deviation (x-plane)
-tBodyGyroJerk.std.Y	|	Average of the tBodyGyroJerk standard deviation (y-plane)
-tBodyGyroJerk.std.Z	|	Average of the tBodyGyroJerk standard deviation (z-plane)
-tBodyAccMag.std	|	Average of the tBodyAccMag standard deviation 
-tGravityAccMag.std	|	Average of the tGravityAccMag standard deviation 
-tBodyAccJerkMag.std	|	Average of the tBodyAccJerkMag standard deviation 
-tBodyGyroMag.std	|	Average of the tBodyGyroMag standard deviation 
-tBodyGyroJerkMag.std	|	Average of the tBodyGyroJerkMag standard deviation 
-fBodyAcc.std.X	|	Average of the fBodyAcc standard deviation (x-plane)
-fBodyAcc.std.Y	|	Average of the fBodyAcc standard deviation (y-plane)
-fBodyAcc.std.Z	|	Average of the fBodyAcc standard deviation (z-plane)
-fBodyAccJerk.std.X	|	Average of the fBodyAccJerk standard deviation (x-plane)
-fBodyAccJerk.std.Y	|	Average of the fBodyAccJerk standard deviation (y-plane)
-fBodyAccJerk.std.Z	|	Average of the fBodyAccJerk standard deviation (z-plane)
-fBodyGyro.std.X	|	Average of the fBodyGyro standard deviation (x-plane)
-fBodyGyro.std.Y	|	Average of the fBodyGyro standard deviation (y-plane)
-fBodyGyro.std.Z	|	Average of the fBodyGyro standard deviation (z-plane)
-fBodyAccMag.std	|	Average of the fBodyAccMag standard deviation 
-fBodyBodyAccJerkMag.std	|	Average of the fBodyBodyAccJerkMag standard deviation 
-fBodyBodyGyroMag.std	|	Average of the fBodyBodyGyroMag standard deviation 
-fBodyBodyGyroJerkMag.std	|	Average of the fBodyBodyGyroJerkMag standard deviation 
+Measurement | Description | Domain
+------------|-------------|-------
+tBodyAcc.mean.X    |	Avg of the tBodyAcc mean (x-plane)	|	time
+tBodyAcc.mean.Y	|	Avg of the tBodyAcc mean (y-plane)	|	time
+tBodyAcc.mean.Z	|	Avg of the tBodyAcc mean (z-plane)	|	time
+tGravityAcc.mean.X	|	Avg of the tGravityAcc mean (x-plane)	|	time
+tGravityAcc.mean.Y	|	Avg of the tGravityAcc mean (y-plane)	|	time
+tGravityAcc.mean.Z	|	Avg of the tGravityAcc mean (z-plane)	|	time
+tBodyAccJerk.mean.X	|	Avg of the tBodyAccJerk mean (x-plane)	|	time
+tBodyAccJerk.mean.Y	|	Avg of the tBodyAccJerk mean (y-plane)	|	time
+tBodyAccJerk.mean.Z	|	Avg of the tBodyAccJerk mean (z-plane)	|	time
+tBodyGyro.mean.X	|	Avg of the tBodyGyro mean (x-plane)	|	time
+tBodyGyro.mean.Y	|	Avg of the tBodyGyro mean (y-plane)	|	time
+tBodyGyro.mean.Z	|	Avg of the tBodyGyro mean (z-plane)	|	time
+tBodyGyroJerk.mean.X	|	Avg of the tBodyGyroJerk mean (x-plane)	|	time
+tBodyGyroJerk.mean.Y	|	Avg of the tBodyGyroJerk mean (y-plane)	|	time
+tBodyGyroJerk.mean.Z	|	Avg of the tBodyGyroJerk mean (z-plane)	|	time
+tBodyAccMag.mean	|	Avg of the tBodyAccMag mean 	|	time
+tGravityAccMag.mean	|	Avg of the tGravityAccMag mean 	|	time
+tBodyAccJerkMag.mean	|	Avg of the tBodyAccJerkMag mean 	|	time
+tBodyGyroMag.mean	|	Avg of the tBodyGyroMag mean 	|	time
+tBodyGyroJerkMag.mean	|	Avg of the tBodyGyroJerkMag mean 	|	time
+fBodyAcc.mean.X	|	Avg of the fBodyAcc mean (x-plane)	|	frequency
+fBodyAcc.mean.Y	|	Avg of the fBodyAcc mean (y-plane)	|	frequency
+fBodyAcc.mean.Z	|	Avg of the fBodyAcc mean (z-plane)	|	frequency
+fBodyAccJerk.mean.X	|	Avg of the fBodyAccJerk mean (x-plane)	|	frequency
+fBodyAccJerk.mean.Y	|	Avg of the fBodyAccJerk mean (y-plane)	|	frequency
+fBodyAccJerk.mean.Z	|	Avg of the fBodyAccJerk mean (z-plane)	|	frequency
+fBodyGyro.mean.X	|	Avg of the fBodyGyro mean (x-plane)	|	frequency
+fBodyGyro.mean.Y	|	Avg of the fBodyGyro mean (y-plane)	|	frequency
+fBodyGyro.mean.Z	|	Avg of the fBodyGyro mean (z-plane)	|	frequency
+fBodyAccMag.mean	|	Avg of the fBodyAccMag mean 	|	frequency
+fBodyBodyAccJerkMag.mean	|	Avg of the fBodyBodyAccJerkMag mean 	|	frequency
+fBodyBodyGyroMag.mean	|	Avg of the fBodyBodyGyroMag mean 	|	frequency
+fBodyBodyGyroJerkMag.mean	|	Avg of the fBodyBodyGyroJerkMag mean 	|	frequency
+tBodyAcc.std.X	|	Avg of the tBodyAcc standard deviation (x-plane)	|	time
+tBodyAcc.std.Y	|	Avg of the tBodyAcc standard deviation (y-plane)	|	time
+tBodyAcc.std.Z	|	Avg of the tBodyAcc standard deviation (z-plane)	|	time
+tGravityAcc.std.X	|	Avg of the tGravityAcc standard deviation (x-plane)	|	time
+tGravityAcc.std.Y	|	Avg of the tGravityAcc standard deviation (y-plane)	|	time
+tGravityAcc.std.Z	|	Avg of the tGravityAcc standard deviation (z-plane)	|	time
+tBodyAccJerk.std.X	|	Avg of the tBodyAccJerk standard deviation (x-plane)	|	time
+tBodyAccJerk.std.Y	|	Avg of the tBodyAccJerk standard deviation (y-plane)	|	time
+tBodyAccJerk.std.Z	|	Avg of the tBodyAccJerk standard deviation (z-plane)	|	time
+tBodyGyro.std.X	|	Avg of the tBodyGyro standard deviation (x-plane)	|	time
+tBodyGyro.std.Y	|	Avg of the tBodyGyro standard deviation (y-plane)	|	time
+tBodyGyro.std.Z	|	Avg of the tBodyGyro standard deviation (z-plane)	|	time
+tBodyGyroJerk.std.X	|	Avg of the tBodyGyroJerk standard deviation (x-plane)	|	time
+tBodyGyroJerk.std.Y	|	Avg of the tBodyGyroJerk standard deviation (y-plane)	|	time
+tBodyGyroJerk.std.Z	|	Avg of the tBodyGyroJerk standard deviation (z-plane)	|	time
+tBodyAccMag.std	|	Avg of the tBodyAccMag standard deviation 	|	time
+tGravityAccMag.std	|	Avg of the tGravityAccMag standard deviation 	|	time
+tBodyAccJerkMag.std	|	Avg of the tBodyAccJerkMag standard deviation 	|	time
+tBodyGyroMag.std	|	Avg of the tBodyGyroMag standard deviation 	|	time
+tBodyGyroJerkMag.std	|	Avg of the tBodyGyroJerkMag standard deviation 	|	time
+fBodyAcc.std.X	|	Avg of the fBodyAcc standard deviation (x-plane)	|	frequency
+fBodyAcc.std.Y	|	Avg of the fBodyAcc standard deviation (y-plane)	|	frequency
+fBodyAcc.std.Z	|	Avg of the fBodyAcc standard deviation (z-plane)	|	frequency
+fBodyAccJerk.std.X	|	Avg of the fBodyAccJerk standard deviation (x-plane)	|	frequency
+fBodyAccJerk.std.Y	|	Avg of the fBodyAccJerk standard deviation (y-plane)	|	frequency
+fBodyAccJerk.std.Z	|	Avg of the fBodyAccJerk standard deviation (z-plane)	|	frequency
+fBodyGyro.std.X	|	Avg of the fBodyGyro standard deviation (x-plane)	|	frequency
+fBodyGyro.std.Y	|	Avg of the fBodyGyro standard deviation (y-plane)	|	frequency
+fBodyGyro.std.Z	|	Avg of the fBodyGyro standard deviation (z-plane)	|	frequency
+fBodyAccMag.std	|	Avg of the fBodyAccMag standard deviation 	|	frequency
+fBodyBodyAccJerkMag.std	|	Avg of the fBodyBodyAccJerkMag standard deviation 	|	frequency
+fBodyBodyGyroMag.std	|	Avg of the fBodyBodyGyroMag standard deviation 	|	frequency
+fBodyBodyGyroJerkMag.std	|	Avg of the fBodyBodyGyroJerkMag standard deviation 	|	frequency
+
 
 ## Why is this dataset tidy?
 
@@ -148,7 +154,7 @@ be more readable would have led to names of excessive length, for example:
     
 would become
 
-    fBodyBodyAccelerometerJerkMagnitude
+    fBodyBodyLinearAccelerationMagnitude
     
 Although terse, it was felt by the author of this course project that the
 shorter names (with the original brackets '()' removed) would suffice.
